@@ -6,8 +6,8 @@ var config = {
     "events" : ["event1", "event2"],
     "log" : [
       {
-        type: 'file',
-        path : 'humix-sample-module.log'
+        file : './humix-sample-module.log',
+        level : 'info'
       }
     ],
     "debug" : true
@@ -18,7 +18,7 @@ var hsm;
 
 humix.on('connection', function(humixSensorModule){
     hsm = humixSensorModule;
-    var log = hsm.getLogger();  // get logger from HumixSenseModule
+    var log = hsm.getLogger();
 
     log.info('Communication with humix-sense is now ready.');
 
