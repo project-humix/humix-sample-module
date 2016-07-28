@@ -1,5 +1,5 @@
 var log = require('logule').init(module, 'sample');
-var HumixSense = require('node-humix-sense')
+var HumixSense = require('humix-sense')
  
 
 var config = {
