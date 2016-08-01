@@ -89,9 +89,13 @@ hsm.on('command1', function(data){
 Sync Command is different than general async command in that it could provide command result to original calling node ( via call back). Here shows an example :
 ```javascript
 
-hsm.on('command1', function(data){
-    console.log('receive data');
-});
+  hsm.on("command1", function (data, done) { 
+     
+        console.log('do something with command1. data:'+data);
+        done('i am done');
+               
+    })
+    );
 ```
 
 ### Life cycle management
