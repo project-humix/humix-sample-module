@@ -1,5 +1,5 @@
 var log = require('logule').init(module, 'sample');
-var HumixSense = require('node-humix-sense')
+var HumixSense = require('humix-sense')
  
 
 var config = {
@@ -18,10 +18,10 @@ humix.on('connection', function(humixSensorModule){
     
     console.log('Communication with humix-sense is now ready.');
 
-    hsm.on("command1", function (data) { 
+    hsm.on("command1", function (data, done) { 
      
         console.log('do something with command1. data:'+data);
-
+        done('i am done');
                
     })
 

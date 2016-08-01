@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "logule": "^2.1.0",
-    "node-humix-sense": "^1.0.0"
+    "humix-sense": "latest"
   },
   "devDependencies": {},
   "scripts": {
