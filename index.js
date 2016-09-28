@@ -12,7 +12,8 @@ var config = {
         level : 'info'
       }
     ],
-    "debug" : true
+    "debug" : true,
+    "natsIp": ""//If empty, means your humix-sense is in the localhost, if not you can fill this p
 };
 
 var humix = new HumixSense(config);
