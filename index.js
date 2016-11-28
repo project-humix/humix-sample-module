@@ -11,6 +11,8 @@ var config = {
       }
     ],
     "localEvents": ['localEvent1','localEvent2'],
+    "natsIP": "",   // default 127.0.0.1
+    "natsPort": "", // default 4222
     "debug" : true
 };
 
