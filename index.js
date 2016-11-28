@@ -10,6 +10,7 @@ var config = {
         level : 'info'
       }
     ],
+    "localEvents": ['localEvent1','localEvent2'],
     "debug" : true
 };
 
@@ -29,6 +30,34 @@ humix.on('connection', function(humixSensorModule){
     hsm.on("command2", function (data) {
         log.info('do something with command2. data:'+data);
     })
+
+    /**
+     *  Local Event provides a way for humix modules to communicate directly
+     *  without going through humix think, which would be more efficient for
+     *  scenarios where two modules need to work closely.
+     *
+     *  To send a local event called 'localEvent1', the sending module invokes
+     *
+     *     hsm.localEventBroadcast('localEvent1', data)
+     *
+     *  To receive a local event, the receiving module registers
+     *
+     *     hsm.onLocalEvent('localEvent1', data).
+     *
+     *  The receiving module also needs to register this event name in its module definition
+     */
+
+    hsm.onLocalEvent('localEvent1', function(data){
+
+         log.info('do something with localEvent1.');
+    })
+
+    hsm.onLocalEvent('localEvent2', function(data){
+
+         log.info('do something with localEvent2.');
+    })
+
+
 
 });
 
