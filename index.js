@@ -1,4 +1,4 @@
-var HumixSense = require('node-humix-sense');
+var HumixSense = require('humix-sense');
 
 var config = {
     "moduleName" : "sample",
@@ -11,7 +11,7 @@ var config = {
       }
     ],
     "localEvents": ['localEvent1','localEvent2'],
-    "natsIP": "",   // default 127.0.0.1
+    "natsIP": '',   // default 127.0.0.1
     "natsPort": "", // default 4222
     "debug" : true
 };
@@ -56,7 +56,7 @@ humix.on('connection', function(humixSensorModule){
 
     hsm.onLocalEvent('localEvent2', function(data){
 
-         log.info('do something with localEvent2.');
+         log.info('do something with localEvent2. Data:'+data);
     })
 
 
